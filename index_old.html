@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <title id = "title">sushi</title>
+      <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>	
+  
+  <body style="background-color:#08141e;">
+  
+    <style>
+      h1{
+         text-align:center;
+         letter-spacing: -10px;
+      }
+      .char{
+        position:absolute; 
+        top:  0px;
+        left: 0px;
+        z-index: 2;
+      }
+      .rectangle {
+        position: absolute;
+        height: 110px;
+        width:  50px;
+        background-color: #816271;
+       
+      }
+      body{
+        font-family:
+      
+    </style>
+    
+    <!-- 
+    current palette is https://lospec.com/palette-list/nyx8
+    I should probably make my own at some point 
+    -->
+    
+    <!-- sushi moving -->
+    <p class="char" style="z-index:10" id="s" >s</p>
+    <p class="char" style="z-index:10" id="u" >u</p>
+    <p class="char" style="z-index:10" id="ss">s</p>
+    <p class="char" style="z-index:10" id="h" >h</p>
+    <p class="char" style="z-index:10" id="i" >i</p>
+    
+    <!-- moving char background left -->
+    <div class="rectangle" 
+    style="
+    left:0; 
+    top:0; 
+    z-index:2;"></div>
+    
+    <!-- moving char border left -->
+    <div class="rectangle" 
+    style="
+    left:0; 
+    top:0; 
+    height:115px; 
+    width:55px; 
+    z-index:1; 
+    background-color:#997577"></div>
+    
+    <!-- top border -->
+    <div class="rectangle" 
+    style="
+    left: 55px; 
+    top: 0px; 
+    width: calc(100% - 55px); 
+    height: 5px;
+    z-index: 1;
+    background-color:#997577"></div>
+    
+    <!-- left border -->
+    <div class="rectangle" 
+    style="
+    left: 0px; 
+    top: 115px; 
+    width: 5px; 
+    height: calc(100% - 115px);
+    background-color:#997577"></div>
+
+    
+    
+    <script>
+      // from https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript
+      function getTextWidth(text, font) {
+       // re-use canvas object for better performance
+        var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+        var context = canvas.getContext("2d");
+        context.font = font;
+        var metrics = context.measureText(text);
+        return metrics.width;
+      }
+    
+      function rotateChars(chars){
+        var time = Date.now() / 1000;
+        
+        var winx = window.innerWidth;
+        var winy = window.innerHeight;
+        
+        for(i = 0; i < chars.length; i++){
+
+          chars[i].style.left = (20 + Math.cos(time) * 20 * Math.sin(time * 2 - i)).toString() + "px";
+          chars[i].style.top = (10 + 10 * i + 20 * Math.cos(time * 2 - i)).toString() + "px";
+          
+        }
+      }
+      
+      chars = [
+        document.getElementById('s'),
+        document.getElementById('u'),
+        document.getElementById('ss'),
+        document.getElementById('h'),
+        document.getElementById('i'),
+      ];
+      setInterval(function() { rotateChars(chars); }, 1);
+      
+    </script>
+
+    
+  </body>	
+</html>
