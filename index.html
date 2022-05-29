@@ -5,6 +5,9 @@
 		scrollbar-width: thin;
 		image-rendering: pixelated;
 	}
+  div{
+    color: white;
+  }
 	html,body{
 		position:absolute;
 		top:0px;
@@ -24,14 +27,33 @@
 		padding-right: 5px;
 		padding-bottom: 5px;
 		border-style: double;
-		border-color: rgb(83, 115, 143);
+    font-size: 20px;
+    border-color:rgb(69, 82, 82);
 		color: rgb(120, 163, 163);
 	}
+  /* ----------------------------------------------------------------------------------- stamps */
+	/*                                                 small animated gifs in the style of stamps */
+  .stamp{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+  }
   a{
     text-decoration: none;
+    color: rgb(120, 163, 163);
   }
 </style>
+
+
+
 <html style="background-color: rgb(5, 9, 17);">
+  <script src="scripts/external/lastfmapi/lastfm.api.md5.js"></script>
+  <script src="scripts/external/lastfmapi/lastfm.api.js"></script>
+  <script src="scripts/lastfm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+  <script>
+    
+  </script>
 	<title>sushi</title>
 	<link rel="icon"type="image/x-icon"href="media/sushirotate.gif"></link>
 	<!-- ------------------------------------------------------------------------------- html body -->
@@ -50,16 +72,15 @@
 					flex-direction: column;
 					height:100%;
 					width:100%;
-					background-color: aliceblue;
+					background-color: rgb(0, 0, 0);
 				">
 				<!-- --------------------------------------------------------------------------- @header -->
 				<!--                        contains rotating sushi and links to other pages of the site -->
 				<div style=" 
 						flex-grow: 0;
-						background-color: rgb(37, 40, 49); 
+            background-color: rgb(29, 31, 37);
 						font-size: 25px;
 						padding:5px;
-						background-image: url(media/spacebackground.gif);
 						height:150px;
 					">
 					<!-- --------------------------------------------------------------------- header flex -->
@@ -71,13 +92,14 @@
 						">
 						<!-- ---------------------------------------------------------------- rotating sushi -->
 						<img src="media/sushirotate.gif" style="
-								flex-grow: 0;						
+								flex-grow: 0;
+                height: 60px						
 							">
 						</img>
 						<!-- ------------------------------------------------------------------------- links -->
 						<div style="
 								flex-grow: 1;
-								text-align: right;
+								text-align: left;
 								padding: 10px;
 							">
 							<a href="art.html" class="headerlink">art</a>
@@ -103,7 +125,7 @@
 							flex-direction: row;
 							gap: 10px;
 							max-width: 1716px;
-              margin:auto;
+              justify-content: center;
 							height:100%;
 						">
             <!-- ------------------------------------------------------------------- left column -->
@@ -111,10 +133,10 @@
 								flex: 1 0;
 								border-style: solid;
                 border-color:rgb(69, 82, 82);
-								height:100%;
                 background-color: rgb(29, 31, 37);
-                max-width: 200px;
-                padding: 10px;
+                max-width: 130px;
+                min-width: 130px;
+                padding: 0px;
 							">
 							<div style="
 									text-align: center;
@@ -123,6 +145,17 @@
 								">
 										Stamps
 							</div>
+              <div style="padding-top: 10px; justify-content: center;">
+                <img src="media/stamps/jiji.gif" class="stamp"></img>
+                <a href="https://mesoscale.neocities.org/">
+                  <img src="media/stamps/citystars_stamp.gif" class="stamp"></img>
+                </a>
+                <img src="media/stamps/punpun.gif" class="stamp"></img>
+                <img src="media/stamps/macplus.gif" class="stamp"></img>
+                <img src="media/stamps/water.gif" class="stamp"></img>
+                <img src="media/stamps/redlightning.gif" class="stamp"></img>
+
+              </div>
 						</div>
             <!-- ----------------------------------------------------------------- middle column -->
 						<div style="
@@ -132,12 +165,16 @@
 								height:1000px;
 								padding: 10px;
 								word-wrap: normal;
+                max-width:550px;
                 background-color: rgb(29, 31, 37);
 							">
-							Welcome to my site. I plan to post a bunch of things here and quick links to those
-							things are found above. <br> 
+              <div style="text-align: center; font-size: 20px;">Welcome to my site!<br></div>
+							I plan to post a bunch of things here and quick links to those
+							things are found above. <br><br>
 							On the left are stamps that either I've made or ones that
-							I found and liked enough to throw on here.
+							I found and liked enough to throw on here. If I know who made it the stamp should 
+              also link to the page I got it from. If a stamp doesnt have a link on it and you know
+              where it comes from please let me know!
 						</div>  
             <!-- ------------------------------------------------------------------ right column -->
 						<div style="
@@ -146,9 +183,14 @@
                 border-color:rgb(69, 82, 82);
 								height:100%;
                 background-color: rgb(29, 31, 37);
-                max-width: 200px;
-                padding: 10px;
+                max-width: 130px;
+                min-width: 130px;
 							">
+              <div style="text-align: center;">Hosted by 
+                <a href="https://neocities.org/">
+                  <img src="media/buttons/neocities-60.gif"></img>
+                </a>
+              </div>
 							<a href="https://github.com/e-sushi/sushisite">source</a>
 						</div>
 					</div>
