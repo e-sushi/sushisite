@@ -27,7 +27,7 @@
 		margin:0px;
 		overflow: auto;
 	}
-	/* ------------------------------------------------------------------------------ headerlinks */
+	/* ------------------------------------------------------------------------------- headerlink */
 	/*              links that appear in the header of each page, meant to look more like buttons */
 	.headerlink{ 
 		text-decoration: none;
@@ -40,6 +40,24 @@
     border-color:rgb(69, 82, 82);
 		color: rgb(120, 163, 163);
 	}
+  /* ------------------------------------------------------------------------------ headerlinks */
+	/*                                                              the container for headerlinks */
+  .headerlink_container{
+    flex-grow: 100;
+    text-align: left;
+    padding:8px;
+    overflow-x:auto;
+    white-space: nowrap;
+  }
+  .section_body{
+    flex: 1 0;
+		padding:10px;
+		background-color: rgb(19, 22, 22);
+    
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
   /* ----------------------------------------------------------------------------------- stamps */
 	/*                                                 small animated gifs in the style of stamps */
   .stamp{
@@ -94,13 +112,7 @@
 							">
 						</img><!-- ---------------------------------------------------------- rotating sushi -->
 						<!-- ------------------------------------------------------------------------- links -->
-						<div style="
-								flex-grow: 100;
-								text-align: center;
-								padding: 10px;
-                overflow-x:auto;
-                white-space: nowrap;
-							">
+						<div class="headerlink_container">
 							<a href="art.html" class="headerlink">art</a>
 							<a href="music.html" class="headerlink">music</a> 
 							<a href="programming.html" class="headerlink">programming</a>
@@ -114,13 +126,7 @@
 					</div><!-- --------------------------------------------------------------- header flex -->
 				</div><!-- ---------------------------------------------------------------------- header -->
 				<!-- ------------------------------------------------------------------------ @home body -->
-				<div style="
-						flex: 1 0;
-						padding:10px;
-						background-color: rgb(19, 22, 22);
-						background-image: url(media/backgrounds/rooted.png);
-            background-size: cover;
-					">
+				<div class="section_body" style="background-image: url(media/backgrounds/rooted.png);">
 					<!-- ------------------------------------------------------- 3 sections container flex -->
 					<div style="
 							display:flex;
@@ -181,7 +187,9 @@
                 <a href="https://neocities.org/">
                   <img src="media/buttons/neocities-60.gif"></img>
                 </a>
-                <img src="media/buttons/code.png">
+                <a href="https://code.visualstudio.com/">
+                  <img src="media/buttons/code.png">
+                </a>
               </div>
 							<a href="https://github.com/e-sushi/sushisite">source</a>
 						</div><!-- ------------------------------------------------------------ right column -->
@@ -221,13 +229,7 @@
               ">
             </img><!-- ---------------------------------------------------------- rotating sushi -->
             <!-- ------------------------------------------------------------------------- links -->
-            <div style="
-                flex-grow: 100;
-                text-align: center;
-                padding: 10px;
-                overflow-x:auto;
-                white-space: nowrap;
-              ">
+            <div class="headerlink_container">
               <a href="art.html" class="headerlink">home</a>
               <a href="music.html" class="headerlink">music</a> 
               <a href="programming.html" class="headerlink">programming</a>
@@ -240,15 +242,108 @@
             </div>
           </div><!-- --------------------------------------------------------------- header flex -->
         </div><!-- ---------------------------------------------------------------------- header -->
-        <div style="
-            flex: 1 0;
-						padding:10px;
-						background-color: rgb(19, 22, 22);
-            background-image: url(media/backgrounds/sil.png);
-          ">
+        <div class="section_body" style="background-image: url(media/backgrounds/rooted.png);">
           hi
         </div>
 			</div><!-- ------------------------------------------------------------ art flex container -->
+
+
+      <!-- --------------------------------------------------------------- @music flex container -->
+			<!--                                 organizes the header and body into 2 different spaces -->
+			<div style="
+          display:flex; 
+          flex-direction: column;
+          height:100%;
+          width:100%;
+          background-color: rgb(0, 0, 0);
+        ">
+        <!-- ---------------------------------------------------------------------------- header -->
+        <!--                        contains rotating sushi and links to other pages of the site -->
+        <div style=" 
+            flex-grow: 0;
+            background-color: rgb(29, 31, 37);
+            font-size: 25px;
+            padding:5px;
+          ">
+          <!-- --------------------------------------------------------------------- header flex -->
+          <!--                               flex keeps sushi on the left and links on the right -->
+          <div style="
+              display:flex;
+              flex-direction:row;
+            ">
+            <!-- ---------------------------------------------------------------- rotating sushi -->
+            <img src="media/minis/sushirotate.gif" style="
+                flex-grow: 0;
+                height: 60px						
+              ">
+            </img><!-- ---------------------------------------------------------- rotating sushi -->
+            <!-- ------------------------------------------------------------------------- links -->
+            <div class="headerlink_container">
+              <a href="art.html" class="headerlink">home</a>
+              <a href="music.html" class="headerlink">art</a> 
+              <a href="programming.html" class="headerlink">programming</a>
+            </div><!-- ------------------------------------------------------------------- links -->
+            <div style="
+                flex: 1 0;
+                padding:10px;
+              ">
+              <i>music</i>
+            </div>
+          </div><!-- --------------------------------------------------------------- header flex -->
+        </div><!-- ---------------------------------------------------------------------- header -->
+        <div class="section_body" style="background-image: url(media/backgrounds/rooted.png);">
+          hi
+        </div>
+      </div><!-- ---------------------------------------------------------- music flex container -->
+
+
+      <!-- --------------------------------------------------------- @programming flex container -->
+			<!--                                 organizes the header and body into 2 different spaces -->
+			<div style="
+          display:flex; 
+          flex-direction: column;
+          height:100%;
+          width:100%;
+          background-color: rgb(0, 0, 0);
+        ">
+        <!-- ---------------------------------------------------------------------------- header -->
+				<!--                        contains rotating sushi and links to other pages of the site -->
+				<div style=" 
+            flex-grow: 0;
+            background-color: rgb(29, 31, 37);
+            font-size: 25px;
+            padding:5px;
+          ">
+          <!-- --------------------------------------------------------------------- header flex -->
+          <!--                               flex keeps sushi on the left and links on the right -->
+          <div style="
+              display:flex;
+              flex-direction:row;
+            ">
+            <!-- ---------------------------------------------------------------- rotating sushi -->
+            <img src="media/minis/sushirotate.gif" style="
+                flex-grow: 0;
+                height: 60px						
+              ">
+            </img><!-- ---------------------------------------------------------- rotating sushi -->
+            <!-- ------------------------------------------------------------------------- links -->
+            <div class="headerlink_container">
+              <a href="art.html" class="headerlink">home</a>
+              <a href="music.html" class="headerlink">art</a> 
+              <a href="programming.html" class="headerlink">music</a>
+            </div><!-- ------------------------------------------------------------------- links -->
+            <div style="
+                flex: 1 0;
+                padding:10px;
+              ">
+              <i>programming</i>
+            </div>
+          </div><!-- --------------------------------------------------------------- header flex -->
+        </div><!-- ---------------------------------------------------------------------- header -->
+        <div class="section_body" style="background-image: url(media/backgrounds/uyfijijij.png);">
+          hi
+        </div>
+			</div><!-- ---------------------------------------------------- programming flex container -->
 		</div><!-- ------------------------------------------------------------------ main container -->
 	</body><!-- ------------------------------------------------------------------------ html body -->
 </html>
